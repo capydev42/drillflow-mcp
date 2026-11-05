@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true
+  },
+  // Only our own sources: the editor modules we import are pulled in by
+  // FOLLOWING those imports, never by globbing `../app/src/lib` — that folder
+  // is full of browser code (canvas, window, import.meta.env) which has no
+  // business being type-checked against a Node target.
+  "include": ["src"]
+}
